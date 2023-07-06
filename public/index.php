@@ -24,3 +24,17 @@
 
     // Amorçage de l'application (Charger les fichiers de configuration)
     require __DIR__ . "/../config/bootstrap.php";
+
+    // Chargement du noyau de l'application
+    require ROOT . "/src/kernel.php";
+
+    // Si le client n'effectue pas la requête via un terminal,
+    if (php_sapi_name() !== "cli")
+    {
+
+        // Traitement de la requête et récupération de la réponse correspondante
+        $response = handleRequest();
+
+        // Affichage de la réponse au client
+        echo $response;
+    }
