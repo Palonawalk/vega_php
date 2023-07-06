@@ -1,26 +1,39 @@
 <?php
 
-/**
- * ----------------------------------------------------------------------------
- *                  L'amorceur de l'application
- * 
- *  Ses rôles :
- *      - Charger les raccourcis (constantes)
- *      - Charger les variables d'environnement
- *      - Charger la configuration système
- *      - Charger la configuration session
- *      - Charger le monolog 
- * ----------------------------------------------------------------------------
- */
+    /**
+     * -----------------------------------------------------------
+     *                L'amorceur de l'application
+     * 
+     * Ses rôles : 
+     *      - Charger les raccourcis (constantes)
+     *      - Charger les variables d'environnement
+     *      - Charger la configuration système
+     *      - Charger la configuration session
+     *      - Charger le monolog
+     * -----------------------------------------------------------
+    */
 
 
-// Chargement des constantes
+    // Chargement des contantes
+    require __DIR__ . "/constants.php";
 
-require __DIR__ . "/constants.php";
+
+    // Chargement des variables d'environnement
+    require __DIR__ . "/dotenv.php";
 
 
-// Chargement des variables d'environnement
+    // Chargement de la configuration système
+    require __DIR__ . "/system.php";
 
-$envFile = parse_ini_file(__DIR__ . "/env.conf");
 
-var_dump($envFile);
+    // Chargement de la configuration session
+    require __DIR__ . "/session.php";
+
+
+    // Chargement du monolog
+    require __DIR__ . "/monolog.php";
+
+    
+
+
+
