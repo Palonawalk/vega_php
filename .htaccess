@@ -1,0 +1,7 @@
+# Activation de l'exécution du moteur de réecriture
+
+RewriteEngine on
+
+# Définition des règles pour le moteur de réécriture
+
+RewriteRule ^(.*)$ public/index.php [L]
